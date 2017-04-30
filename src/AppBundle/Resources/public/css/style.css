@@ -1,0 +1,16 @@
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 980px;
+}
+header{
+    text-align: center;
+    padding: 5px;
+}
+footer{
+    text-align: center;
+    padding: 5px;
+}
+.error{
+    color: red;
+}

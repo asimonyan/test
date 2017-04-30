@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Item
  * @package AppBundle\Entity
  * @ORM\Table(name="item")
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\ItemRepository")
  */
 class Item
 {

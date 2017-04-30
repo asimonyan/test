@@ -1,4 +1,42 @@
 {% extends "AppBundle::layout.html.twig" %}
 {% block container %}
-    test
+    <div class="row">
+        <div class="col-md-9">
+            <h3>Items</h3>
+            <div class="row">
+                {% if items.getTotalItemCount %}
+                    {% for item in items %}
+                        <div class="col-xs-6 col-md-3">
+                            <a href="{{ path('item', {'name' : item.name } ) }}" class="thumbnail">
+                                <div class="text-center">
+                                    {{ item.name }}
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center">
+                        Items not found
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <h3>Categories</h3>
+            <ul class="list-group">
+                {% for category in categories %}
+                    <li class="list-group-item">
+                        <a href="{{ path('category', {'name' : category } ) }}">
+                            {{ category}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="navigation">
+            {{ knp_pagination_render(items) }}
+        </div>
+    </div>
 {% endblock %}

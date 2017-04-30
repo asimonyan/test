@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Class Category
  * @package AppBundle\Entity
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\CategoryRepository")
  * @ORM\Table(name="category")
  */
 class Category
