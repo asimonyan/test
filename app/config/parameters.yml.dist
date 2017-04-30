@@ -17,3 +17,5 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+    captcha_key: 6LfpZB8UAAAAANhvWyILK1TQZ8ZYuRmZRgJ4jjwo
+    captcha_security: 6LfpZB8UAAAAAIF5KmjI9iRe4OcnVI64s7K3xdoK

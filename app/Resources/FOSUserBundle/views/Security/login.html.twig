@@ -1,0 +1,50 @@
+{% extends "::base.html.twig" %}
+
+{% block javascripts %}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="form-top">
+                <div class="form-top-left">
+                    <h3>Login</h3>
+                    <p>Enter your username and password to log in:</p>
+                </div>
+            </div>
+
+            <div>
+                <form role="form" action="{{ path("fos_user_security_check") }}" method="post">
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                    <div class="form-group">
+                        <label class="sr-only" for="username">Username</label>
+                        <input type="text" name="_username" placeholder="Username..."
+                               class="form-control" id="username" value="{{ last_username }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="password">Password</label>
+                        <input type="password" name="form-password" placeholder="Password..."
+                               class="form-control" id="password" required>
+                    </div>
+
+                    <div class="form-group g-recaptcha" data-sitekey="{{ captcha_key }}"></div>
+
+                    {% if error %}
+                        <div class="form-group text-center text-danger">
+                            {{ error|trans({}, 'FOSUserBundle') }}
+                        </div>
+                    {% endif %}
+
+                    <button id="_submit" type="submit" class="btn">Sign in!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
