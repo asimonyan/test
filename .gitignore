@@ -12,3 +12,4 @@
 /composer.phar
 composer.lock
 .idea/
+web/bower_components
