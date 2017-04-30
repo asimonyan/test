@@ -20,7 +20,7 @@ security:
                   provider:       fos_userbundle
                   login_path:     /admin/login
                   check_path:     /admin/login_check
-                  default_target_path: /admin
+                  default_target_path: /admin/dashboard
               logout:
                   path:           /admin/logout
                   target:         /admin/login

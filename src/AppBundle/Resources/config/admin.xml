@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- category admin-->
+        <service id="app.admin.category" class="AppBundle\Admin\CategoryAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Main" label="Category"/>
+            <argument/>
+            <argument>AppBundle\Entity\Category</argument>
+            <argument/>
+        </service>
+
+        <!-- item admin -->
+        <service id="app.admin.item" class="AppBundle\Admin\ItemAdmin">
+            <tag name="sonata.admin" manager_type="orm" group="Main" label="Item"/>
+            <argument/>
+            <argument>AppBundle\Entity\Item</argument>
+            <argument/>
+        </service>
+
+    </services>
+
+</container>
