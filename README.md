@@ -28,3 +28,5 @@ sudo setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache/ app/logs
 
 ### Step6: Create virtual host
 #### host name must be 'localtest.com'. This is important for google re-captcha
+
+### Step7: Create user with SUPER_USER_ADMIN role, for admin panel
