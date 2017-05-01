@@ -14,3 +14,14 @@ footer{
 .error{
     color: red;
 }
+
+/* override bootstrap media query*/
+@media only screen and (min-width: 450px) {
+    .collapse {
+        display: block;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+}

@@ -1,11 +1,11 @@
 {% extends "AppBundle::layout.html.twig" %}
 {% block container %}
-    <h3>Items</h3>
+    <h3 class="text-center">Items</h3>
     <div class="row">
 
         {% if items.getTotalItemCount %}
             {% for item in items %}
-                <div class="col-xs-6 col-md-3">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <a href="{{ path('item', {'name' : item.name } ) }}" class="thumbnail">
                         <div class="text-center">
                             {{ item.name }}
