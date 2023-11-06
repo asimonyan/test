@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+{% for key, participanAnswer in  result %}
+    {% set color = participanAnswer.isCorrect ? 'green' : 'red' %}
+
+    <div style=" padding: 10px; margin: 10px;  border: 1px solid {{ color }}">
+        <p><strong>Question:</strong> {{ participanAnswer.question.title }}</p>
+        <p><strong>Answers:</strong></p>
+        {% for answer in participanAnswer.question.answers %}
+            <p>{{ answer.title }}</p>
+        {% endfor %}
+        <div>
+            <strong>Your answer is  <span style="color: {{ color }}"> {{ participanAnswer.isCorrect ? 'Correct' : 'InCorrect' }} </span> :</strong>
+            {% for selectedAnswer in participanAnswer.selectedAnswers %}
+                <p>{{ selectedAnswer.title }}</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  php:
+    container_name: php-test
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    networks:
+      - test-network
+    volumes:
+      - ./:/var/www/textmagic/
+
+  nginx:
+    container_name: nginx-test
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - test-network
+    depends_on:
+      - php
+      - postgres
+    volumes:
+      - ./:/var/www/textmagic/
+      - ./docker/nginx/config/:/etc/nginx/conf.d/
+
+  postgres:
+    container_name: postgres-test
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5433:5433"
+    environment:
+      POSTGRES_DB: "textmagic"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge
