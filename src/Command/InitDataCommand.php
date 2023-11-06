@@ -26,7 +26,7 @@ class InitDataCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $questions = $this->entityManager->getRepository(Question::class)->findBy([], [],1);
-        if (!$questions) {
+        if ($questions) {
             return Command::SUCCESS;
         }
 
