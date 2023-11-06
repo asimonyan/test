@@ -1,13 +1,28 @@
-### 1. clone project `git clone git@github.com:asimonyan/test.git`
+How to install
+====
 
-### 2. go to workdir
+### Step1: Clone the project
+```ssh
+git clone git@github.com:asimonyan/test.git
+```
 
-### 3. install vendors `composer install`
+### Step2: Go to workdir
 
-### 4. Run docker `docker compose up --build -d `
+### Step3: install vendors
+```ssh
+composer install
+```
 
-### 5. Init database/and data do db run `docker exec php-test bash init.sh`
+### Step4: Run docker
+```ssh
+docker compose up --build -d 
+```
 
-### 6.open http://127.0.0.1:8080/
+### Step5: Init database/and data do db run
+```ssh
+docker exec php-test bash init.sh
+```
+### Step6: open http://127.0.0.1:8080/
 
-ps: (с Докером(всегда настроивал свое окружение сам) и с PostgreSql(работал всегда с MySql) работал первый раз)
+ps: С Докером(всегда настроивал свое окружение сам) и с PostgreSql(работал всегда с MySql) работал первый раз
+
